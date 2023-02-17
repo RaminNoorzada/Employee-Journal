@@ -12,7 +12,7 @@ function questions() {
                 'View all roles',
                 'View all employees',
                 'Add a department',
-                'Add a role',
+                'Add a roles',
                 'Add an employee',
                 'Update an employee role',
                 'Exit application',
@@ -154,13 +154,24 @@ function updateEmpRole() {
                 )
 
                 db.query(
-                    'UPDATE employee SET role_id = ? WHERE id= ?',
-                    [answers.role_id, employee.id],
-                    (err, res) => {
-                        if (err) throw err
+               'UPDATE employee SET role_id = ? WHERE id= ?',
+                [answers.role_id, employee.id],
+                   (err, res) => {
+                       if (err) throw err
                         console.log('Employee updated successfully.')
-                    }
-                )
+                   }
+               )
+            //   function updateEmployeeRole(db, employee, answers) {
+                // db.query(
+                //   'UPDATE employee SET role_id = ? WHERE id= ?',
+                //   [answers.role_id, employee.id],
+                //   (err, res) => {
+                    // if (err) throw err;
+                    // console.log('Employee updated successfully.');
+                //   }
+                // );
+            //   }
+              
             })
         })
     })
