@@ -122,7 +122,7 @@ function addEmployee() {
             db.query('INSERT INTO employee SET ?', answers, (err, res) => {
                 if (err) throw err
                 console.log('Employee added successfully.')
-                questions()
+                db.end()
             })
         })
     })
@@ -193,12 +193,12 @@ function viewAllRoles() {
     })
 }
 
-function viewAllEmployees() {
-    db.query('SELECT * FROM employee', (err, res) => {
-        if (err) throw err
-        console.table(res)
-        questions()
-    })
-}
+//function viewAllEmployees() {
+//db.query('SELECT * FROM employee', (err, res) => {
+   // if (err) throw err
+   //     console.table(res)
+   //     questions()
+   // })
+//}
 
 questions()
